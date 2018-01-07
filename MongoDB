@@ -1,0 +1,7 @@
+notes on MongoDB:
+
+1. social apps: if you have celebrity users, they may overflow any document that you're storing followers in.
+
+2. the aggregation framework cannot write to collections, so all results must be returned to the client. Thus, aggregation results are limited to 16 MB of data (pg. 129) 
+
+3. Managing Consistency: Note that this is a per-connection queue: if we open two shells, we will have two connections to the database. If we perform an insert into 1 shell, a subsequent query in the other shell might NOT return the inserted document (pg 163)
